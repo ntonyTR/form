@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 
+:root {
+  --color-fondo: #282828;
+  --color-link: #ffd300;
+  --color-fondo-claro: #353535;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,10 +17,12 @@ body {
   height: 100vh;
   display: flex;
   font-family:'Roboto', sans-serif;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .background {
-  width: 30vw;
+  width: 40vw;
   background-image: url(./images/background.webp);
   background-size: cover;
   background-position: center;
@@ -32,7 +40,7 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   padding: 50px 0;
   margin-top: auto;
@@ -41,15 +49,15 @@ body {
 div>h1 {
   font-family: 'Share Tech', sans-serif;
   font-size: 5rem;
-  color: #ffd300;
+  color: var(--color-link);
 }
 
 .main-content{
-  width: 65vw;
-}
-
-.main-content>div>p{
-  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-fondo);
+  flex: 1;
 }
 
 .background>footer{
@@ -59,5 +67,58 @@ div>h1 {
 }
 
 p>a{
-  color: #ffd300;
+  color: var(--color-link);
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  width: 28ch;
+}
+
+.main-content > :first-child {
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+
+.main-content > :last-child {
+  margin-top: 30px;
+}
+
+[type="submit"] + p {
+  margin-top: 30px;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: none;
+}
+
+legend {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: .8rem;
+}
+
+.form-element > input {
+  font-size: 1.2rem;
+}
+
+form {
+  background-color: var(--color-fondo-claro);
+  width: 100%;
+  padding: 20px 0;
+}
+
+.rl-padding {
+  padding-left: 10%;
+  padding-right: 15%;
+}
+
+[type="submit"]{
+  padding: .5rem 2rem;
 }
