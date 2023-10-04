@@ -31,33 +31,33 @@
       </p>
     </div>
 
-    <form class="rl-padding" action="#" method="post" id="signUp-form">
+    <form class="rl-padding" action="https://httpbin.org/post" method="post" id="signUp-form">
       <fieldset>
-        <legend>Let's do this!</legend>
+        <legend>Sign In</legend>
 
         <div class="form-element">
-          <label for="first-name">First name:</label>
-          <input type="text" id="first-name">
+          <label for="first-name">FIRST NAME</label>
+          <input type="text" id="first-name" name="first_name" required>
         </div>
         <div class="form-element">
-          <label for="last-name">Last name:</label>
-          <input type="text" id="last-name">
+          <label for="last-name">LAST NAME</label>
+          <input type="text" id="last-name" name="last_name" required>
         </div>
         <div class="form-element">
-          <label for="email">Email:</label>
-          <input type="email" id="email">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="form-element">
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone">
+          <label for="phone">PHONE</label>
+          <input type="tel" id="phone" name="phone" required>
         </div>
         <div class="form-element">
-          <label for="password">Password:</label>
-          <input type="password" id="password">
+          <label for="password">PASSWORD</label>
+          <input type="password" id="password" name="password" required>
         </div>
         <div class="form-element">
-          <label for="password-confirm">Confirm password:</label>
-          <input type="password" id="password-confirm">
+          <label for="password-confirm">CONFIRM PASSWORD</label>
+          <input type="password" id="password-confirm" name="password_confirm" required>
         </div>
 
       </fieldset>
