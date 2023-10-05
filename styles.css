@@ -70,6 +70,7 @@ div>h1 {
 .main-content > :first-child {
   font-weight: bolder;
   margin-bottom: 40px;
+  font-size: 1.5rem;
 }
 
 form {
@@ -78,7 +79,7 @@ form {
   padding: 20px 0;
 }
 
-fieldset {
+fieldset, #inputs {
   display: flex;
   flex-wrap: wrap;
   border: none;
@@ -139,4 +140,8 @@ a{
 .rl-padding {
   padding-left: 10%;
   padding-right: 15%;
+}
+
+.invalid {
+  background-color: violet;
 }
