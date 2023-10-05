@@ -16,10 +16,10 @@
 body {
   height: 100vh;
   display: flex;
-  font-family:'Roboto', sans-serif;
-  color: white;
-  font-size: 1.2rem;
   flex-wrap: wrap;
+  font-family:'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: white;
 }
 
 .background {
@@ -30,95 +30,46 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   flex: 2;
+}
+
+.title-container{
+  width: 100%;
+  padding: 30px 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .logo {
   height: 5rem;
 }
 
-.title-container{
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 0;
-  margin: auto;
-}
-
 div>h1 {
   font-family: 'Share Tech', sans-serif;
+  margin-left: 1ch;
   font-size: 5rem;
   color: var(--color-link);
-  margin-left: 1ch;
+}
+
+.background>footer{
+  margin-bottom: 2rem;
 }
 
 .main-content{
   min-width: 480px;
   display: flex;
+  flex: 3;
   flex-direction: column;
   justify-content: center;
   background-color: var(--color-fondo);
-  flex: 3;
-}
-
-.background>footer{
-  margin-bottom: 2rem;
-  color: white;
-}
-
-p>a{
-  color: var(--color-link);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.form-element {
-  display: flex;
-  flex-direction: column;
-  width: 24ch;
-  margin-right: 30px;
 }
 
 .main-content > :first-child {
   font-weight: bolder;
-  margin: 30px 0;
-}
-
-.main-content > :last-child {
-  margin-top: 30px;
-}
-
-[type="submit"] + p {
-  margin-top: 30px;
-}
-
-fieldset {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  border: none;
-}
-
-legend {
-  margin-bottom: 1rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-label {
-  font-size: .8rem;
-  letter-spacing: .2rem;
-}
-
-input {
-  font-size: 1.2rem;
-  border-radius: 6px;
-  border: 2px solid var(--color-fondo);
-  margin-top: 3px;
-  padding: 5px 10px;
+  margin-bottom: 40px;
 }
 
 form {
@@ -127,28 +78,65 @@ form {
   padding: 20px 0;
 }
 
-.rl-padding {
-  padding-left: 10%;
-  padding-right: 15%;
-}
-
-button{
-  padding: .5rem 2rem;
-  background-color: var(--color-link);
-  box-shadow: 1px 1px 10px black;
-  cursor: pointer;
-  font-size: 1rem;
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
 }
 
-input:focus {
+legend {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.form-element {
+  width: 24ch;
+  margin-right: 60px;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  letter-spacing: .2rem;
+}
+
+input {
+  font-size: 1.2rem;
+  border-radius: 6px;
+  border: 2px solid var(--color-fondo);
+  margin-top: .2rem;
+  padding: 5px 10px;
+}
+
+input:focus, button:hover {
   box-shadow: 0 0 5px 2px var(--color-link);
   outline: none;
   border: 2px solid var(--color-link);
 }
 
-/* input:invalid {
-  background-color: red;
-} */
+.main-content > :last-child {
+  margin-top: 40px;
+}
+
+button{
+  padding: 1rem 3rem;
+  margin-bottom: 	15px;
+  background-color: var(--color-link);
+  box-shadow: 2px 2px 10px var(--color-fondo-claro);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+a{
+  color: var(--color-link);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.rl-padding {
+  padding-left: 10%;
+  padding-right: 15%;
+}
