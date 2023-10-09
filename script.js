@@ -1,55 +1,63 @@
-  let signUpForm = document.getElementById("sign-up-form");
+let signUpForm = document.getElementById("sign-up-form");
 signUpForm.noValidate = true;
 
 signUpForm.addEventListener("submit", validateForm);
+signUpForm.addEventListener("submit", validatePasswords);
 
 function validateForm(e) {
   const form = e.target;
-  if (form.checkValidity()) {
-    e.preventDefault(); // TEST
-    console.log("Valid!"); // TEST
-  } else {
-    e.preventDefault(); // TEST
-    console.log("Invalid!"); // TEST
-
-    highlightInvalid(signUpForm)
+  if (!form.checkValidity()) {
+    e.preventDefault();
+    highlightInvalid(form);
   }
 }
 
-function highlightInvalid(form){
+function highlightInvalid(form) {
   Array.from(form.elements).forEach((ele) => {
-    if(ele.checkValidity()){
+    if (ele.checkValidity()) {
       ele.classList.remove("invalid");
+      removeErrorMessage(ele, "invalid");
     } else {
       ele.classList.add("invalid");
+      showErrorMessage(ele, "invalid");
     }
-  })
+  });
 }
 
-signUpForm.addEventListener("submit", function(e) {
-  e.preventDefault();
-  let password = document.getElementById("password").value;
-  let passwordConfirm = document.getElementById("password-confirm").value;
-
-  console.log("password:", password);
-  console.log("confirm password:", passwordConfirm);
-
-  if(password === passwordConfirm){
-    console.log("Match!");
-  }else{
-    console.log("Mismatch!");
+function removeErrorMessage(ele, className) {
+  let span = ele.nextElementSibling;
+  if (span) {
+    span.classList.remove(className);
   }
-});
+}
 
-function validatePasswords(e){
-  let password = document.getElementById("password").value;
-  let passwordConfirm = document.getElementById("password-confirm").value;
+function showErrorMessage(ele, className) {
+  let span = ele.nextElementSibling;
+  if (span) {
+    span.classList.add(className);
+  }
+}
 
-  if(password === passwordConfirm){
-    console.log("MATCH"); //TEST
-  }else{
-    console.log("MISMATCH"); //TEST
-    e.preventDefault()
-    //AQUI
+function validatePasswords(e) {
+  let password = document.getElementById("password");
+  let passwordConfirm = document.getElementById("password-confirm");
+
+  if (!password.value || !passwordConfirm) {
+    e.preventDefault();
+    password.classList.add("invalid");
+    passwordConfirm.classList.add("invalid");
+    return
+  } else if (password.value !== passwordConfirm.value) {
+    e.preventDefault();
+    showErrorMessage(password, "error");
+    showErrorMessage(passwordConfirm, "error");
+    console.log(password);
+    console.log(passwordConfirm);
+    return;
+  } else {
+    password.classList.remove("invalid");
+    passwordConfirm.classList.remove("invalid");
+    removeErrorMessage(password, "error")
+    removeErrorMessage(passwordConfirm, "error");
   }
 }
